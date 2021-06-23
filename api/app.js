@@ -2,6 +2,7 @@
 const express = require("express");
 const morgan = require("morgan");
 const cookieParser = require("cookie-parser");
+const { check, validationResult } = require("express-validator");
 
 // Allows to use env variables
 require("dotenv").config();
