@@ -15,6 +15,7 @@ const PORT = process.env.PORT || 8000;
 const { mongodb } = require("./db/conn");
 
 // Import Routes
+const authRoutes = require("./routes/auth");
 const userRoutes = require("./routes/user");
 
 // Middleware
@@ -23,6 +24,7 @@ app.use(express.json());
 app.use(cookieParser());
 
 // Routes Middleware
+app.use("/api", authRoutes);
 app.use("/api", userRoutes);
 
 // Start the app
